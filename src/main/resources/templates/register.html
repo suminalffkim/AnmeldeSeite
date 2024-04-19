@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <title>Registrierung</title>
+</head>
+
+<body>
+    <header>
+        <h1>Registrierung</h1>
+    </header>
+    <main>
+        <form action="/register" method="post">
+            <div class="container">
+                <label for="benutzername">Benutzername:</label>
+                <input type="text" id="benutzername" name="benutzername" th:value="${benutzername}" required>
+            </div>
+            <div class="container">
+                <label for="password">Passwort:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="container">
+                <label for="passwordRepeat">Passwort wiederholen:</label>
+                <input type="password" id="passwordRepeat" name="passwordRepeat" required>
+
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" th:value="${email}" required>
+
+            </div>
+            <div>
+                <label for="vorname">Vorname:</label>
+                <input type="text" id="vorname" name="vorname" th:value="${vorname}" required>
+
+            </div>
+            <div>
+                <label for="nachname">Nachname:</label>
+                <input type="text" id="nachname" name="nachname" th:value="${nachname}" required>
+
+            </div>
+            <div>
+                <label for="geburtsdatum">Geburtsdatum:</label>
+                <input type="date" id="geburtsdatum" name="geburtsdatum" th:value="${geburtsdatum}" required>
+
+            </div>
+            <div>
+                <label for="adresse">Adresse:</label>
+                <input type="text" id="adresse" name="adresse" th:value="${adresse}" required>
+
+            </div>
+            <div>
+                <label for="stadt">Stadt:</label>
+                <input type="text" id="stadt" name="stadt" th:value="${stadt}" required>
+            </div>
+
+            <div>
+                <label for="PLZ">PLZ:</label>
+                <input type="text" id="PLZ" name="PLZ" th:value="${PLZ}" required>
+            </div>
+            <div>
+                <label for="land">Land:</label>
+                <input type="text" id="land" name="land" th:value="${land}" required>
+            </div>
+
+            <div>
+                <label for="frage">Waehle Frage:</label>
+                <select id="frage" name="frage" required>
+                    <option value="Film">Lieblingsfilm</option>
+                    <option value="Haustier">Name des ersten Haustiers:</option>
+                    <option value="Musiker">Lieblingsmusiker</option>
+                </select>
+            </div>
+            <div>
+                <label for="antwort">Antwort:</label>
+                <input type="text" id="antwort" name="antwort" required>
+            </div>
+
+            <button type="submit">Registrieren</button>
+        </form>
+
+
+
+    </main>
+</body>
+
+</html>
