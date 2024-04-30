@@ -12,27 +12,34 @@ public class HTMLController {
 	@GetMapping("/hello")
 	public String hello() {
 		
-		return "hello"; // Gibt den Namen der HTML-Datei zurück (ohne Erweiterung), die gerendert werden
-						// soll
+		return "hello"; 
 	}
 	
 	@GetMapping("/register")
 	public String register() {
 		
-		return "register"; // Gibt den Namen der HTML-Datei zurück (ohne Erweiterung), die gerendert werden
-						// soll
+		return "register"; 
+	}
+	
+	@GetMapping("/")
+	public String login() {
+	
+		return "login"; 
 	}
 	
 	@GetMapping("/login")
-	public String login() {
+	public String login2() {
 	
-		return "login"; // Gibt den Namen der HTML-Datei zurück (ohne Erweiterung), die gerendert werden
-						// soll
+		return "login"; 
 	}
 	@GetMapping("/dashboard")
 	public String dashboard() {
 	
-		return "dashboard"; // Gibt den Namen der HTML-Datei zurück (ohne Erweiterung), die gerendert werden
-						// soll
-	}
+		return "dashboard";
+}
+	@GetMapping("/successful")
+	public String successful() {
+	
+		return "successful";
+}
 }

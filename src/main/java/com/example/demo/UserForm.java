@@ -1,6 +1,9 @@
 package com.example.demo;
 
 public class UserForm {
+	
+	UserService userService;
+
 	public String[] variableNames = { "benutzername", "password", "vorname", "nachname", "email", "adresse", "stadt",
 			"PLZ", "land", "antwort", "geburtsdatum", "frage" };
 	private String benutzername,  password, vorname,  nachname,  email,
@@ -21,6 +24,24 @@ public class UserForm {
 		this.antwort = antwort;
 		this.geburtsdatum = geburtsdatum;
 		this.frage = frage;
+	}
+	
+	//Konstuktor mit username
+	public UserForm(String benutzername) {
+		this.benutzername=userService.findById(benutzername, variableNames[0]);
+		this.password=userService.findById(benutzername, variableNames[1]);
+		this.vorname=userService.findById(benutzername, variableNames[2]);
+		this.nachname=userService.findById(benutzername, variableNames[3]);
+		this.email=userService.findById(benutzername, variableNames[4]);
+		this.adresse=userService.findById(benutzername, variableNames[5]);
+		this.stadt=userService.findById(benutzername, variableNames[6]);
+		this.PLZ=userService.findById(benutzername, variableNames[7]);
+		this.land=userService.findById(benutzername, variableNames[8]);
+		this.antwort=userService.findById(benutzername, variableNames[9]);
+		this.geburtsdatum=userService.findById(benutzername, variableNames[10]);
+		this.frage=userService.findById(benutzername, variableNames[11]);
+		
+		
 	}
 
 	public String getBenutzername() {

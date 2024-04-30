@@ -13,8 +13,8 @@ public class SignUpPageApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SignUpPageApplication.class, args);
 	}
-    @GetMapping("/")
-    public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-      return String.format("Hello %s! Main", name);
-    }
+//    @GetMapping("/")
+//    public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
+//      return String.format("Hello %s! Main", name);
+//    }
 }

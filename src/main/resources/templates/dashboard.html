@@ -8,20 +8,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Your Dashboard</h1>
-        <div>
-            <p>Benutzername: <span th:text="${username}"></span></p>
-            <p>Email: <span th:text="${email}"></span></p>
-            <p>First Name: <span th:text="${firstName}"></span></p>
-            <p>Last Name: <span th:text="${lastName}"></span></p>
-            <p>Date of Birth: <span th:text="${birthdate}"></span></p>
-            <p>Address: <span th:text="${address}"></span></p>
-            <p>City: <span th:text="${city}"></span></p>
-            <p>Postal Code: <span th:text="${postalCode}"></span></p>
-            <p>Country: <span th:text="${country}"></span></p>
-            <p>Security Question: <span th:text="${securityQuestion}"></span></p>
-            <p>Answer: <span th:text="${securityAnswer}"></span></p>
-        </div>
+        <h1>
+           Herzliche Willkommen!</h1>
+           <h2 th:text="${username}">usernameDefault</h2>
     </div>
 </body>
 </html>

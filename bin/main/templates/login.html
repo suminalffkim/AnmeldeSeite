@@ -11,21 +11,24 @@
         <h1>Willkommen</h1>
     </header>
     <main>
+        <div class="container">
         <h1>Anmeldung</h1>
+        </div>
         <form action="/login" method="post">
-            <div>
+
+            <div class="container">
                 <label for="id">ID:</label>
                 <input type="text" id="id" name="id" required>
             </div>
-            <div>
+            <div class="container">
                 <label for="password">Passwort:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <div>
+            <div class="container">
                 <button type="submit">Anmelden</button>
             </div>
             <label th:if="${session.showLabel}" id="myLabel">Anmeldeinformation stimmt nicht.</label>
-            <div>
+            <div class="container">
                 Neu hier?<a href="/register">Registrieren</a>
             </div>
         </form>

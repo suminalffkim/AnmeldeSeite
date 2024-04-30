@@ -23,8 +23,8 @@ public class SignIn {
 	public String signIn(@RequestParam("id") String id, @RequestParam("password") String password,
 			RedirectAttributes redirectAttributes) {
 		if (userService.authenticateUser(id, password)) {
-			user.setBenutzername(id);
-			ShowDashboard showDashboard = new ShowDashboard(user); //gib user weiter
+//			user.setBenutzername(id);
+			ShowDashboard showDashboard = new ShowDashboard(id);
 			return "redirect:/dashboard";
 		} else {
 			redirectAttributes.addFlashAttribute("showLabel", true);

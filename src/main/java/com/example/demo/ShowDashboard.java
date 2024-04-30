@@ -12,33 +12,27 @@ public class ShowDashboard {
 	private UserForm user;
 	@Autowired
 	private UserService userService;
-	public ShowDashboard(UserForm user) {
-		this.user = user;
+	private String username;
+
+	public ShowDashboard(String userID) {
+		username = userID;
 	}
 
 	@GetMapping("/dashboard")
-	public String  displayDashboard(Model model) {
-		String username = user.getBenutzername();
-		String[] values = new String[user.variableNames.length];
-
-
-		for(int i=0;i<user.variableNames.length;i++) {
-			values[i]=userService.findById(username,user.variableNames[i]);
-		}
-		//ERROR
-		 // Füge jeden Wert einzeln zum Modell hinzu
-        model.addAttribute("username", username);
-        model.addAttribute("email", values[4]);
-        model.addAttribute("firstName", values[2]);
-        model.addAttribute("lastName", values[3]);
-        model.addAttribute("birthdate", values[10]);
-        model.addAttribute("address", values[5]);
-        model.addAttribute("city", values[6]);
-        model.addAttribute("postalCode", values[7]);
-        model.addAttribute("country", values[8]);
-        model.addAttribute("securityQuestion", values[11]);
-        model.addAttribute("securityAnswer", values[9]);
-        return "dashboard"; // Name der HTML-Datei im `src/main/resources/templates` Verzeichnis
+	public String displayDashboard(Model model) {
+		user = new UserForm(username); //mit username neue user setzen
+		model.addAttribute("username", username);
+//		model.addAttribute("email", user.getEmail());
+//		model.addAttribute("firstName", user.getVorname());
+//		model.addAttribute("lastName", user.getNachname());
+//		model.addAttribute("birthdate", user.getGEB());
+//		model.addAttribute("address", user.getAdresse());
+//		model.addAttribute("city", user.getStadt());
+//		model.addAttribute("postalCode", user.getPLZ());
+//		model.addAttribute("country", user.getLand());
+//		model.addAttribute("securityQuestion", user.getFrage());
+//		model.addAttribute("securityAnswer", user.getAntwort());
+		return "dashboard";
 
 	}
 }
