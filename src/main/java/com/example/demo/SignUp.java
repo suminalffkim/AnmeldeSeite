@@ -40,6 +40,8 @@ public class SignUp {
             @RequestParam("antwort") String antwort,
             Model model)  {
 		
+		//wenn passwort!=wederholpasswort ist, soll die register form mit schon angegebene info bleiben.
+		//aber es funktuniert nicht. es ruft zwar register aber die Info werden nicht ausgefuellt
 		if (!password.equals(passwordRepeat)) {
 		    model.addAttribute("error", "Passwörter stimmen nicht überein.");
 		    model.addAttribute("benutzername", benutzername);
@@ -70,7 +72,8 @@ public class SignUp {
 		    
 		}
 else {
-		
+		//wenn es sicher ist, dass Registrierung durchgefuhrt werden kann. 
+	//dann die frage gleicher form vom SQL enum umgewandelt.
 		switch(frage) {
 		case "Film":frage="lieblings Film";
 		case "Haustier":frage="Name ersten Haustiers";
@@ -80,11 +83,11 @@ else {
 		UserForm userForm=new UserForm( benutzername,  password, vorname,  nachname,  email,
                  adresse,  stadt,  PLZ,  land,  antwort,  geburtsdatum,  frage);
 		
-		// Füge den Benutzer zur Datenbank hinzu
+		// fuege den Benutzer zur Datenbank hinzu
 		userService.registerUser(userForm);
 
 		
-		// Weiterleitung zur Anmeldeseite oder zur Bestätigungsseite
+		// Weiterleitung zur sucess seite und die seite wird nach 5 sekunde zur Anmeldeseite weiterleten
 		return "redirect:/successful";
 		}
 	}

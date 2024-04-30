@@ -4,6 +4,7 @@ public class UserForm {
 	
 	UserService userService;
 
+	//alle columns in SQL
 	public String[] variableNames = { "benutzername", "password", "vorname", "nachname", "email", "adresse", "stadt",
 			"PLZ", "land", "antwort", "geburtsdatum", "frage" };
 	private String benutzername,  password, vorname,  nachname,  email,

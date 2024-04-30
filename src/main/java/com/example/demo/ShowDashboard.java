@@ -3,15 +3,12 @@ package com.example.demo;
 import com.example.demo.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.ui.Model;
 
 public class ShowDashboard {
 	private UserForm user;
 	@Autowired
-	private UserService userService;
 	private String username;
 
 	public ShowDashboard(String userID) {

@@ -9,7 +9,7 @@ import java.sql.Statement;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class UserService {//class fuer sql connection
 
 	// JDBC-Verbindungsdaten
 	private static final String url = "jdbc:mysql://localhost:3306/anmeldeliste";
@@ -24,7 +24,6 @@ public class UserService {
 				Statement stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery(query)) {
 
-			// Durch die Ergebnisse iterieren und sie ausgeben
 			while (rs.next()) {
 				String userId = rs.getString("benutzername");
 				String firstname = rs.getString("Vorname");
@@ -37,6 +36,7 @@ public class UserService {
 	}
 
 	public static boolean authenticateUser(String username, String password) {
+		//um anmelde daten zu ueberprefen.
 		String query = "SELECT * FROM benutzer WHERE benutzername = '" + username + "' AND passwort = '" + password
 				+ "'";
 		try (Connection con = DriverManager.getConnection(url, user, SQLpassword);
@@ -51,12 +51,12 @@ public class UserService {
 	}
 
 	public static boolean isUsableID(String username) {
+		//ueberprueft ob die benutzername schon vorhanden ist
 		String query = "SELECT * FROM benutzer WHERE benutzername = '" + username + "'";
 		try (Connection con = DriverManager.getConnection(url, user, SQLpassword);
 				Statement stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery(query)) {
-			// Wenn ein Datensatz gefunden wird, sind die Anmeldeinformationen korrekt
-			return !rs.next();
+			return !rs.next(); //nur wenn benutzername nicht vorhanden ist, kann man registrieren
 		} catch (SQLException e) {
 
 			e.printStackTrace();

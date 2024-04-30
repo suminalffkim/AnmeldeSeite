@@ -22,7 +22,8 @@ public class SignIn {
 	@PostMapping("/login")
 	public String signIn(@RequestParam("id") String id, @RequestParam("password") String password,
 			RedirectAttributes redirectAttributes) {
-		if (userService.authenticateUser(id, password)) {
+		
+		if (userService.authenticateUser(id, password)) { //wenn id und pw mit SQL geseichert info uebereinstimmt,
 //			user.setBenutzername(id);
 			ShowDashboard showDashboard = new ShowDashboard(id);
 			return "redirect:/dashboard";
